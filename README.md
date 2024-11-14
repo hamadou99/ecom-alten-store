@@ -33,7 +33,7 @@ Creer la base de donnée backenddb
 lancer le projet
 3.1 Execution du projet sans Docker
 Modifier le fichier application.properties avec des informations connexion de la base de donnee
-<img src="D:\SAV\atlen1.PNG"/>
+<img src="D:\Proget perso\ecom-alten-store\atlen1.PNG"/>
 # 4.Comment tester les Endpoints?
 4.1 Ouvrir un navigateur Web pour acceder le swagger via ce lien http://localhost:8099/swagger-ui/index.html
 et s'authentifier comme suit Username: altenStore et Password: passer@123
