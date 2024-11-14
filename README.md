@@ -31,10 +31,16 @@ Cloner le projet via ce lien : https://github.com/hamadou99/ecom-alten-store.git
 Ouvrir le projet avec Intellij Idea et attendre le build du projet
 Creer la base de donnée backenddb
 lancer le projet
+3.1 Execution du projet sans Docker
+Modifier le fichier application.properties avec des informations connexion de la base de donnee
+<img src="D:\SAV\atlen1.PNG"/>
 # 4.Comment tester les Endpoints?
 4.1 Ouvrir un navigateur Web pour acceder le swagger via ce lien http://localhost:8099/swagger-ui/index.html
-et s'authentifier comme suit Username: test et Password: test
+et s'authentifier comme suit Username: altenStore et Password: passer@123
 
 4.2 Installer Postman
 Avant de lancer une requête s'authentifier comme suit avec les parametres suivants:
-Username: test et password: test
+
+Authorization --> Auth Type --> Basic Auth
+         Username: altenStore et password: passer@123
+<img src="D:\SAV\alten2.PNG"/>
