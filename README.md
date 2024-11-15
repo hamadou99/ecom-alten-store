@@ -35,7 +35,8 @@ Suprimer un produit
 Modifier le fichier application.properties avec des informations connexion de la base de donnee
 <img src="\atlen1.PNG"/>
 # 4. Comment tester les Endpoints?
-*  Ouvrir un navigateur Web pour acceder le swagger via ce lien https://localhost:8099/swagger-ui/index.html
+
+*  Ouvrir un navigateur Web pour acceder le swagger via ce lien : http://localhost:8099/swagger-ui/index.html
 et s'authentifier comme suit
 * Username: altenStore et Password: passer@123
 
