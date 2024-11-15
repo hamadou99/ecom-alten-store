@@ -1,12 +1,40 @@
-version: '3'
+version: "3.9"
 
+networks:
+  alten-net:
 services:
-  postgres:
-    image: 'postgres:13'
-    container_name: 'java-postgres'
+  alten:
+    build:
+      context: .
+    image: maven/builder:0.0.1
+    container_name: alten
     ports:
-      - 5433:5433
+      - "8099:8099"
     environment:
-      - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_HOST_AUTH_METHOD=trust'
-      - 'POSTGRES_DB=java'
+      - DB_HOST=10.42.1.205
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=passer123
+      - POSTGRES_DB=backenddb
+    volumes:
+      - "./src:/build/src"
+      - "./target:/build/target:cached"
+    command: "mvn spring-boot:run"
+    networks:
+      - alten-net
+    depends_on:
+      - postgres_db
+  postgres_db:
+    container_name: postgres_db
+    image: "postgres:14.5-alpine"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=passer123
+      - POSTGRES_DB=backenddb
+    networks:
+      - alten-net
+    volumes:
+      - spring_dev_data:/var/lib/postgresql/data
+volumes:
+  spring_dev_data: {}

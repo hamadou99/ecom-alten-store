@@ -5,11 +5,12 @@
 Lister les produits
 AJouter un produit
 Modifier un produit
+Modifier un ou des entites produit(s), modification patch 
 Suprimer un produit
 # 2. Stack utilisée.
    Voici une description générale des composants intégrés dans le projet:
 
-* Spring Boot 3.2.2: La base même du projet, Spring Boot facilite la création d'applications Java autonomes, en fournissant une configuration par défaut et en minimisant la nécessité de configurations manuelles.
+* Spring Boot 3.3.5: La base même du projet, Spring Boot facilite la création d'applications Java autonomes, en fournissant une configuration par défaut et en minimisant la nécessité de configurations manuelles.
 * Spring Web: Spring Web est une partie du framework Spring qui facilite le développement d'applications web Java
 * Spring Data JPA: Une partie de la famille Spring Data, ce module simplifie l'accès aux bases de données relationnelles via Java Persistence API (JPA) en utilisant des annotations pour définir les entités et leurs relations.
 * Spring Security : Un module de sécurité robuste qui permet de gérer l'authentification et l'autorisation dans l'application
@@ -18,18 +19,17 @@ Suprimer un produit
 * Postgres: C'est un SGBDR open source et puissant
 * Junit et Mockito: Des frameworks de test largement utilisés pour les tests unitaires et les tests d'intégration.
 * Docker: Technologie nous permettant de créer des conteneurs.
+* SpringDoc/Swagger pour les documentations et tests des endpoints
 # 3. Execution du projet
    Voici la démarche à suivre pour executer le projets
 
 * Installer JDK 17 , Intellij Idea et Docker
 * Ouvrir le terminal et vérifier que docker est bien installé en tapant la commande (docker -v)
-* taper les commandes suivantes :
-  *  docker pull postgres
-  *  docker run --name some-postgres -e POSTGRES_PASSWORD=passer123 -d postgres
-  *  vérifier que le conteneur est lancé avec la commande docker ps
 * Cloner le projet via ce lien : https://github.com/hamadou99/ecom-alten-store.git
-* Ouvrir le projet avec Intellij Idea et attendre le build du projet
-* Creer la base de donnée backenddb
+* taper les commandes suivantes :
+  *  docker-compose up --build
+  *  vérifier que le conteneur est lancé avec la commande: docker ps
+* Creer la base de donnée backenddb (nom :backenddb user:postgres password :passer123 a defaut de sont initialisation par Docker)
 * lancer le projet
 3.1 Execution du projet sans Docker
 Modifier le fichier application.properties avec des informations connexion de la base de donnee
